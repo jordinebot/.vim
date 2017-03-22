@@ -1,0 +1,3 @@
+[submodule "bundle/vim-indentguides"]
+	path = bundle/vim-indentguides
+	url = https://github.com/thaerkh/vim-indentguides

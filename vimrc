@@ -156,8 +156,19 @@ if has('syntax') && has('eval')
     packadd matchit
 endif
 
+
 """ MY CUSTOM SETUP
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 let mapleader=","
+
+" Cancel a search with Esc
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+" Fast switch to previous file
+nnoremap <Leader><Leader> :e#<CR>
 
 " Map ,r to reload .vimrc.
 map <leader>r :source ~/.vimrc<CR>
@@ -184,3 +195,4 @@ set expandtab       " Convert TAB to spaces
 set smartindent
 set autoindent
 set cursorline
+
