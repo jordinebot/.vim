@@ -2,6 +2,8 @@
 " and $VIMRUNTIME/defaults.vim
 
 " Enable pathogen to load plugins
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = ['ctrlp.vim']
 execute pathogen#infect()
 
 " Bail out if something that ran earlier, e.g. a system wide vimrc, does not
