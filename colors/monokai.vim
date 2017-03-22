@@ -95,7 +95,7 @@ let s:delbg       = { "gui": "#f75f5f", "cterm": "167" }
 let s:changefg    = { "gui": "#d7d7ff", "cterm": "189" }
 let s:changebg    = { "gui": "#5f5f87", "cterm": "60" }
 
-" Highlighting 
+" Highlighting
 " ------------
 
 " editor
@@ -156,10 +156,10 @@ call s:h("Type",          { "fg": s:aqua })
 call s:h("Structure",     { "fg": s:aqua })
 call s:h("StorageClass",  { "fg": s:aqua })
 call s:h("Typedef",       { "fg": s:aqua })
-    
+
 call s:h("Identifier",    { "fg": s:green })
 call s:h("Function",      { "fg": s:green })
-                         
+
 call s:h("Statement",     { "fg": s:pink })
 call s:h("Operator",      { "fg": s:pink })
 call s:h("Label",         { "fg": s:pink })
@@ -173,7 +173,7 @@ call s:h("Include",       { "fg": s:pink })
 call s:h("Define",        { "fg": s:pink })
 call s:h("Macro",         { "fg": s:green })
 call s:h("PreCondit",     { "fg": s:green })
-                           
+
 call s:h("Special",       { "fg": s:purple })
 call s:h("SpecialChar",   { "fg": s:pink })
 call s:h("Delimiter",     { "fg": s:pink })
@@ -183,7 +183,7 @@ call s:h("Tag",           { "fg": s:pink })
 
 call s:h("Todo",          { "fg": s:orange,   "format": "bold,italic" })
 call s:h("Comment",       { "fg": s:warmgrey, "format": "italic" })
-                         
+
 call s:h("Underlined",    { "fg": s:green })
 call s:h("Ignore",        {})
 call s:h("Error",         { "fg": s:red, "bg": s:darkred })
@@ -228,11 +228,11 @@ call s:h("jsBuiltins",          { "fg": s:aqua })
 call s:h("jsArgsObj",           { "fg": s:aqua })
 call s:h("jsStatic",            { "fg": s:aqua })
 call s:h("jsSuper",             { "fg": s:aqua })
-call s:h("jsFuncArgRest",       { "fg": s:purple, "format": "italic" })                                 
+call s:h("jsFuncArgRest",       { "fg": s:purple, "format": "italic" })
 call s:h("jsFuncArgs",          { "fg": s:orange, "format": "italic" })
 call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
-                                 
+
 " Html
 call s:h("htmlTag",             { "fg": s:white })
 call s:h("htmlEndTag",          { "fg": s:white })
@@ -298,3 +298,14 @@ call s:h("cStructure",                  { "fg": s:pink })
 call s:h("cStorageClass",               { "fg": s:pink })
 call s:h("cInclude",                    { "fg": s:green })
 call s:h("cDefine",                     { "fg": s:green })
+
+" custom statusline
+hi User1 guifg=#ffdad8  guibg=#880c0e
+hi User2 guifg=#000000  guibg=#F4905C
+hi User3 guifg=#292b00  guibg=#f4f597
+hi User4 guifg=#112605  guibg=#aefe7B
+hi User5 guifg=#051d00  guibg=#7dcc7d
+hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
+hi User8 guifg=#ffffff  guibg=#5b7fbb
+hi User9 guifg=#ffffff  guibg=#810085
+hi User0 guifg=#ffffff  guibg=#094afe
