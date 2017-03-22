@@ -183,3 +183,4 @@ set shiftwidth=4
 set expandtab       " Convert TAB to spaces
 set smartindent
 set autoindent
+set cursorline
