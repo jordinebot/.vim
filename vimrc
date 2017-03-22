@@ -1,6 +1,9 @@
 " Jordi Nebot's .vimrc based on $VIMRUNTIME/vimrc_example.vim
 " and $VIMRUNTIME/defaults.vim
 
+" Enable pathogen to load plugins
+execute pathogen#infect()
+
 " Bail out if something that ran earlier, e.g. a system wide vimrc, does not
 " want Vim to use these default values.
 if exists('skip_defaults_vim')
