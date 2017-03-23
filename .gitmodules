@@ -10,3 +10,9 @@
 [submodule "/Users/jordinebot/.vim/bundle/vim-coffee-script"]
 	path = /Users/jordinebot/.vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "/Users/jordinebot/.vim/bundle/CoffeeTags"]
+	path = /Users/jordinebot/.vim/bundle/CoffeeTags
+	url = https://github.com/lukaszkorecki/CoffeeTags

@@ -172,11 +172,17 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Fast switch to previous file
 nnoremap <Leader><Leader> :e#<CR>
 
-" Map ,r to reload .vimrc.
-map <leader>r :source ~/.vimrc<CR>
+" Map ,s to source (reload) .vimrc.
+map <leader>s :source ~/.vimrc<CR>
 
 " Map ,ai to reindent the current buffer and return cursor to its position
 map <leader>ai mzgg=G`z
+
+" Map ,t to TagBar
+nmap <leader>t :TagbarToggle<CR>
+
+" Replace all occurrences of word under cursor in the whole file
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Set color theme to molokai
 colorscheme monokai
@@ -201,7 +207,7 @@ set cursorline
 
 " Plugin setup
 let g:netrw_home='/git'
-let g:netrw_list_hide='node_modules,\.git,.DS_Store'
+let g:netrw_list_hide='node_modules,\.git,.DS_Store,\~$,'
 " Use The Silver Searcher (https://robots.thoughtbot.com/faster-grepping-in-vim)
 if executable('ag') && exists(":CtrlP")
     " Use ag over grep
@@ -220,6 +226,18 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" Remove CoffeeScript blocks from TagBar
+
+let g:tagbar_type_coffee = {
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'c:classes',
+        \ 'o:object',
+        \ 'v:variables',
+        \ 'p:prototypes',
+        \ '?:unknown',
+    \ ],
+\ }
 " My custom statusline
 function! HighlightSearch()
     if &hls
