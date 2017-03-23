@@ -183,12 +183,13 @@ colorscheme monokai
 
 " Set fontsize (only for GUI mode e.g. MacVim)
 if has('gui_running')
-    set guifont=mononoki:h22
+    set guifont=mononoki:h20
     set guioptions-=T  " no toolbar
     set linespace=10
 endif
 
 filetype indent on
+set hidden          " Allows to switch buffers without saving first
 set number
 set nowrap
 set tabstop=4
@@ -199,8 +200,10 @@ set autoindent
 set cursorline
 
 " Plugin setup
+let g:netrw_home='/git'
+let g:netrw_list_hide='node_modules,\.git,.DS_Store'
 " Use The Silver Searcher (https://robots.thoughtbot.com/faster-grepping-in-vim)
-if executable('ag')
+if executable('ag') && exists(":CtrlP")
     " Use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor
 
