@@ -173,16 +173,19 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap <Leader><Leader> :e#<CR>
 
 " Map ,s to source (reload) .vimrc.
-map <leader>s :source ~/.vimrc<CR>
+map <Leader>s :source ~/.vimrc<CR>
 
 " Map ,ai to reindent the current buffer and return cursor to its position
-map <leader>ai mzgg=G`z
+map <Leader>ai mzgg=G`z
 
 " Map ,t to TagBar
-nmap <leader>t :TagbarToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
 
 " Replace all occurrences of word under cursor in the whole file
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Easy buffer switch with ,.#
+map <Leader>. :ls<CR>:b
 
 " Set color theme to molokai
 colorscheme monokai
@@ -204,10 +207,16 @@ set expandtab       " Convert TAB to spaces
 set smartindent
 set autoindent
 set cursorline
+set conceallevel=0  " Don't hide conceal text (e.g. quotes on JSON files)
+
+" Make search (but not replacement) case insensitive:
+" Explanation ->  http://stackoverflow.com/a/35359583/1534704
+nnoremap / /\c
+nnoremap ? ?\c
 
 " Plugin setup
 let g:netrw_home='/git'
-let g:netrw_list_hide='node_modules,\.git,.DS_Store,\~$,'
+let g:netrw_list_hide='node_modules,\.git,.DS_Store,\~$,\.swp$'
 " Use The Silver Searcher (https://robots.thoughtbot.com/faster-grepping-in-vim)
 if executable('ag') && exists(":CtrlP")
     " Use ag over grep
