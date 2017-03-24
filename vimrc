@@ -186,6 +186,7 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Easy buffer switch with ,.#
 map <Leader>. :ls<CR>:b
+map <Leader>g :e /git<CR>
 
 " Set color theme to molokai
 colorscheme monokai
@@ -217,6 +218,10 @@ nnoremap ? ?\c
 " Plugin setup
 let g:netrw_home='/git'
 let g:netrw_list_hide='node_modules,\.git,.DS_Store,\~$,\.swp$'
+
+" Emmet expand with TAB
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
 " Use The Silver Searcher (https://robots.thoughtbot.com/faster-grepping-in-vim)
 if executable('ag') && exists(":CtrlP")
     " Use ag over grep
@@ -247,6 +252,32 @@ let g:tagbar_type_coffee = {
         \ '?:unknown',
     \ ],
 \ }
+
+" Setting Working Directory
+" set working directory to git project root
+" or directory of current file if not git project
+function! SetProjectRoot()
+  " default to the current file's directory
+  lcd %:p:h
+  let git_dir = system("git rev-parse --show-toplevel")
+  " See if the command output starts with 'fatal' (if it does, not in a git repo)
+  let is_not_git_dir = matchstr(git_dir, '^fatal:.*')
+  " if git project, change local directory to git project root
+  if empty(is_not_git_dir)
+    lcd `=git_dir`
+  endif
+endfunction
+
+autocmd BufRead *
+    \ call SetProjectRoot()
+
+" netrw: set working directory
+autocmd CursorMoved silent *
+    " short circuit for non-netrw files
+    \ if &filetype == 'netrw' |
+    \   call SetProjectRoot() |
+    \ endif
+
 " My custom statusline
 function! HighlightSearch()
     if &hls

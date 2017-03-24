@@ -16,3 +16,6 @@
 [submodule "/Users/jordinebot/.vim/bundle/CoffeeTags"]
 	path = /Users/jordinebot/.vim/bundle/CoffeeTags
 	url = https://github.com/lukaszkorecki/CoffeeTags
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
