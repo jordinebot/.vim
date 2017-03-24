@@ -1,21 +1,18 @@
-[submodule "bundle/vim-indentguides"]
-	path = bundle/vim-indentguides
+[submodule "~/vim/vim-indentguides"]
+	path = ~/vim/vim-indentguides
 	url = https://github.com/thaerkh/vim-indentguides
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
+[submodule "~/vim/ctrlp.vim"]
+	path = ~/vim/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "bundle/vim-easy-align"]
-	path = bundle/vim-easy-align
+[submodule "~/vim/vim-easy-align"]
+	path = ~/vim/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
-[submodule "/Users/jordinebot/.vim/bundle/vim-coffee-script"]
-	path = /Users/jordinebot/.vim/bundle/vim-coffee-script
+[submodule "~/.vim/~/vim/vim-coffee-script"]
+	path = ~/.vim/~/vim/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "/Users/jordinebot/.vim/bundle/CoffeeTags"]
-	path = /Users/jordinebot/.vim/bundle/CoffeeTags
+[submodule "~/.vim/~/vim/CoffeeTags"]
+	path = ~/.vim/~/vim/CoffeeTags
 	url = https://github.com/lukaszkorecki/CoffeeTags
-[submodule "bundle/emmet-vim"]
-	path = bundle/emmet-vim
+[submodule "~/vim/emmet-vim"]
+	path = ~/vim/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
