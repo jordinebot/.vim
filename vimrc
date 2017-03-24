@@ -188,6 +188,19 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 map <Leader>. :ls<CR>:b
 map <Leader>g :e /git<CR>
 
+" Quick way to move lines of text up or down.
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 " Set color theme to molokai
 colorscheme monokai
 
