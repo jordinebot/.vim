@@ -172,8 +172,13 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Fast switch to previous file
 nnoremap <Leader><Leader> :e#<CR>
 
-" Map ,s to source (reload) .vimrc.
-map <Leader>s :source ~/.vimrc<CR>
+" Fast save
+map <Leader>w :w<CR>
+map <Leader>s :w!<CR>
+map <D-s> :w<CR>
+
+" Map ,v to source (reload) .vimrc.
+map <Leader>v :source ~/.vimrc<CR>
 
 " Map ,ai to reindent the current buffer and return cursor to its position
 map <Leader>ai mzgg=G`z
