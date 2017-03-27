@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Łukasz Korecki	/lukasz@korecki.me/
+!_TAG_PROGRAM_NAME	CoffeeTags	//
+!_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
+!_TAG_PROGRAM_VERSION	0.6.0	//
+TransitHelper	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^class TransitHelper$/;"	c	line:1	language:coffee
+constructor	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^    constructor: (@app, @node) ->$/;"	p	line:2	language:coffee	object:TransitHelper
+disable	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^    disable: ->$/;"	p	line:13	language:coffee	object:TransitHelper
+enable	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^    enable: (transport) ->$/;"	p	line:4	language:coffee	object:TransitHelper
+if 	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^        if Transports.valid transport$/;"	b	line:5	language:coffee
+unselectAll	../../../git/urbaning/src/coffee/38-transit-helper.coffee	/^    unselectAll: ->$/;"	p	line:16	language:coffee	object:TransitHelper

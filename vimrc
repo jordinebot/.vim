@@ -169,9 +169,16 @@ let mapleader=","
 " Cancel a search with Esc
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-" Automatically close parenthesis, brackets, quotes, etc
+" Automatically close parenthesis & brackets
 inoremap ( ()<Esc>i
 inoremap {<CR> {<CR>}<Esc>ko
+
+" Wrappings in visual mode
+
+vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
+vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
+vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 " Fast save
 map <Leader>w :w<CR>
