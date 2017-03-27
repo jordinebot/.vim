@@ -169,8 +169,9 @@ let mapleader=","
 " Cancel a search with Esc
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-" Fast switch to previous file
-nnoremap <Leader><Leader> :e#<CR>
+" Automatically close parenthesis, brackets, quotes, etc
+inoremap ( ()<Esc>i
+inoremap {<CR> {<CR>}<Esc>ko
 
 " Fast save
 map <Leader>w :w<CR>
@@ -192,6 +193,10 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Easy buffer switch with ,.#
 map <Leader>. :ls<CR>:b
 map <Leader>g :e /git<CR>
+map <Leader>j :bnext<CR>
+map <Leader>k :bprev<CR>
+" Fast switch to previous file
+nnoremap <Leader><Leader> :e#<CR>
 
 " Quick way to move lines of text up or down.
 " Normal mode
@@ -205,6 +210,13 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Map Shift Tab
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
+
 
 " Set color theme to molokai
 colorscheme monokai
@@ -227,7 +239,7 @@ set smartindent
 set autoindent
 set cursorline
 set conceallevel=0  " Don't hide conceal text (e.g. quotes on JSON files)
-
+set tags=./tags;/
 " Make search (but not replacement) case insensitive:
 " Explanation ->  http://stackoverflow.com/a/35359583/1534704
 nnoremap / /\c
@@ -237,8 +249,18 @@ nnoremap ? ?\c
 let g:netrw_home='/git'
 let g:netrw_list_hide='node_modules,\.git,.DS_Store,\~$,\.swp$'
 
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['node_modules', '\~$']
+" Quit vim if NERDTree is the last remaining buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Always show Bookmarks
+let NERDTreeShowBookmarks=1
+"Auto open NERDtree on enter vim
+au VimEnter *  NERDTree /git/
+
 " Emmet expand with TAB
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd BufNewFile,BufRead *.html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Use The Silver Searcher (https://robots.thoughtbot.com/faster-grepping-in-vim)
 if executable('ag') && exists(":CtrlP")
@@ -259,7 +281,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Remove CoffeeScript blocks from TagBar
-
 let g:tagbar_type_coffee = {
     \ 'kinds' : [
         \ 'f:functions',
